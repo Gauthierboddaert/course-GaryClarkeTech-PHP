@@ -1,0 +1,21 @@
+{
+  "name": "vendor/php-framework-pro",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "Gauthier",
+  "authors": [
+    {
+      "name": "gauthierboddaert",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "Gauthier\\Framework\\": "framework/"
+    }
+  },
+  "require": {
+    "symfony/var-dumper": "^6.3"
+  }
+}
