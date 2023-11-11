@@ -8,4 +8,6 @@ use Gauthier\Framework\Http\Response;
 interface RouterInterface
 {
     public function dispatch(Request $request): Response;
+
+    public function checkRouteExists(array $router): array;
 }

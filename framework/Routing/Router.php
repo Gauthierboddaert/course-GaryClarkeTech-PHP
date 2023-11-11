@@ -2,6 +2,7 @@
 
 namespace Gauthier\Framework\Routing;
 
+use Gauthier\Framework\Http\Exception\HttpMethodNotFound;
 use Gauthier\Framework\Http\Request;
 use Gauthier\Framework\Http\Response;
 use FastRoute;
@@ -24,8 +25,21 @@ class Router implements RouterInterface
             $request->getPathInfo(),
         );
 
-        [$status,[$controller, $method], $vars] = $routeInfo;
+        [$status,[$controller, $method], $vars] = $this->checkRouteExists($routeInfo);
 
         return call_user_func_array([new $controller(), $method], $vars);
+    }
+
+    public function checkRouteExists(array $router): array
+    {
+        switch ($router[0]) {
+            case FastRoute\Dispatcher::FOUND:
+                return $router;
+            case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+                $methodAllowed = implode(', ',$router[1]);
+                throw new HttpMethodNotFound("Method(s) allowed: $methodAllowed");
+            default:
+                throw new \Exception('Route not found', 404);
+        }
     }
 }
