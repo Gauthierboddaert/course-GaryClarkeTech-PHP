@@ -37,7 +37,7 @@ class Router implements RouterInterface
                 return $router;
             case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $methodAllowed = implode(', ',$router[1]);
-                throw new HttpMethodNotFound("Method(s) allowed: $methodAllowed");
+                throw new HttpMethodNotFound("Method(s) allowed: $methodAllowed", 405);
             default:
                 throw new \Exception('Route not found', 404);
         }
