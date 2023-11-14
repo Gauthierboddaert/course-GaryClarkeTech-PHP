@@ -12,9 +12,11 @@
     }
   ],
   "require-dev": {
-    "symfony/var-dumper": "6.3.x-dev"
+    "symfony/var-dumper": "6.3.x-dev",
+    "phpunit/phpunit": "11.0.x-dev"
   },
   "require": {
-    "gauthierboddaert/php-framework-pro": "dev-main"
+    "gauthierboddaert/php-framework-pro": "dev-main",
+    "psr/container": "2.0.x-dev"
   }
 }
