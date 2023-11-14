@@ -7,7 +7,7 @@ services:
         ports:
             - "80:80"
     # application
-    app:
+    php:
         image: garyclarke/php-framework-app
         volumes:
             - .:/var/www/html
