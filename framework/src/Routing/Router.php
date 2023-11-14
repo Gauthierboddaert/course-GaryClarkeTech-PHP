@@ -2,10 +2,10 @@
 
 namespace Gauthier\Framework\Routing;
 
+use FastRoute;
 use Gauthier\Framework\Http\Exception\HttpMethodNotFound;
 use Gauthier\Framework\Http\Request;
 use Gauthier\Framework\Http\Response;
-use FastRoute;
 
 class Router implements RouterInterface
 {

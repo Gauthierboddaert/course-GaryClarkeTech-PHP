@@ -3,7 +3,6 @@
 namespace Gauthier\Framework\Http;
 
 
-use FastRoute;
 use Gauthier\Framework\Http\Exception\HttpMethodNotFound;
 use Gauthier\Framework\Routing\RouterInterface;
 
